@@ -1,38 +1,39 @@
-.App {
+body{
+  background: #f8f8f8;
+}
+.navbar-dark .navbar-brand {
+    color: #fff !important;
+}
+.newshead
+{
   text-align: center;
+  font-weight: 600;
+  margin: 20px 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+span.position-absolute.top-0.start-100.translate-middle.badge.rounded-pill.bg-success
+{
+  right: 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card-news
+{
+  min-height: 565px;
+  border-radius: 0;
+  box-shadow: rgb(25 25 25 / 4%) 0 0 1px 0, rgb(0 0 0 / 10%) 0 3px 4px 0;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.card-news .card-img-top
+{
+  min-height: 260px;
+  max-height: 260px;
 }
-
-.App-link {
-  color: #61dafb;
+.card-news .card-body .card-title
+{
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 600;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-news .card-body  .btn
+{
+  padding: 10px 30px;
+  background: #000;
+  border: none;
 }
