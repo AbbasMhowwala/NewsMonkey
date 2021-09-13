@@ -1,7 +1,12 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-
+import { useHistory } from 'react-router';
 const Navbar = ()=>  {
+    let history = useHistory();
+    const handleLogout = ()=>{
+        localStorage.removeItem('token');
+        history.push('/login')
+    }
     return (
         <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
             <Link className="navbar-brand" to="/">Navbar</Link>
@@ -38,10 +43,10 @@ const Navbar = ()=>  {
                         <Link className="nav-link" to="/technology">Technology</Link>
                     </li>
                 </ul>
-                {/* <form className="form-inline my-2 my-lg-0">
-                <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form> */}
+                {!localStorage.getItem('token')?<form className="form-inline my-2 my-lg-0">
+                    <Link className="btn btn-primary mx-3" to="/login">Login</Link>
+                    <Link className="btn btn-primary" to="/register">Register</Link>
+                </form>: <button onClick={handleLogout} className="btn btn-primary" to="">Logout</button>}
             </div>
         </nav>
         )

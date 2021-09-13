@@ -15,7 +15,7 @@ const News = (props)=> {
     }
     const updateNews =  async ()=>{
         props.setProgress(0);
-        const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
+        const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}`;
         setLoading(true)
         let data =  await fetch(url);
         props.setProgress(30);
@@ -32,7 +32,7 @@ const News = (props)=> {
         //eslint-disable-next-line
     }, [])
     const fetchMoreData = async () => {        
-        const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page+1}&pageSize=${props.pageSize}`;
+        const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page+1}`;
         setPage(page+1)
         let data =  await fetch(url);
         let parseData = await data.json()
@@ -65,12 +65,12 @@ const News = (props)=> {
 }
 News.defaultProps = {
     country: 'in',
-    pageSize: 8,
+    //pageSize: 8,
     category: 'genral'
 }
 News.propTypes = {
     country: PropTypes.string,
-    pageSize: PropTypes,
+    //pageSize: PropTypes,
     category: PropTypes.string,
 }
 export default News
