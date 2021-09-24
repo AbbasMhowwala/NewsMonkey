@@ -17,7 +17,7 @@ const Login = (props) => {
     });
     const json = await response.json()
     //console.log(json);
-    if(json.msg == 'success'){
+    if(json.msg === 'success'){
       //redirect
       props.showAlert("Logged In Successfully", 'success')
       localStorage.setItem('token', json.data[0].token);      
@@ -35,15 +35,13 @@ const Login = (props) => {
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="email">Email address</label>
-          <input type="email" className="form-control" id="email" value={credentials.email} onChange={onChange} name="email" />
+          <input type="email" placeholder="Enter your email" className="form-control" id="email" value={credentials.email} onChange={onChange} name="email" />
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input type="password" className="form-control" id="password" value={credentials.password}  onChange={onChange} name="password" />
+          <input type="password" placeholder="Enter your password" className="form-control" id="password" value={credentials.password}  onChange={onChange} name="password" />
         </div>
         <div className="form-group text-center">
-          <button button type="submit" className="btn btn-primary">Submit</button>
+          <button button type="submit" className="btn btn-primary">Sign In</button>
         </div>
       </form>
     </div>

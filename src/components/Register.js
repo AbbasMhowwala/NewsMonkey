@@ -20,10 +20,10 @@ const Register = (props) => {
     );
     const json = await response.json();
     console.log(json);
-    if(json == 1){
+    if(json.msg === 'success'){
         //redirect
-        localStorage.setItem('token', json.json.data[0].token);      
-        history.push("/")
+        localStorage.setItem('token', json.data[0].token);      
+        history.push("/login")
         props.showAlert("Account Creates Successfully", 'success')
       }
       else{
@@ -38,7 +38,6 @@ const Register = (props) => {
       <h1>Register</h1>
       <form onSubmit={handleSubmit}>
       <div className="form-group">
-          <label htmlFor="email">Name</label>
           <input
             type="name"
             className="form-control"
@@ -46,10 +45,10 @@ const Register = (props) => {
             value={credentials.name}
             onChange={onChange}
             name="name"
+            placeholder="Enter your name"
           />
         </div>        
         <div className="form-group">
-          <label htmlFor="email">Email address</label>
           <input
             type="email"
             className="form-control"
@@ -57,10 +56,10 @@ const Register = (props) => {
             value={credentials.email}
             onChange={onChange}
             name="email"
+            placeholder="Enter your email"
           />
         </div>
         <div className="form-group">
-          <label htmlFor="number">Phone</label>
           <input
             type="number"
             className="form-control"
@@ -68,10 +67,10 @@ const Register = (props) => {
             value={credentials.phone}
             onChange={onChange}
             name="phone"
+            placeholder="Enter your phone"
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password</label>
           <input
             type="password"
             className="form-control"
@@ -79,10 +78,10 @@ const Register = (props) => {
             value={credentials.password}
             onChange={onChange}
             name="password"
+            placeholder="Enter your password"
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password">Username</label>
           <input
             type="text"
             className="form-control"
@@ -90,10 +89,10 @@ const Register = (props) => {
             value={credentials.username}
             onChange={onChange}
             name="username"
+            placeholder="Enter your username"
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password">Desc</label>
           <input
             type="text"
             className="form-control"
@@ -101,11 +100,12 @@ const Register = (props) => {
             value={credentials.desc}
             onChange={onChange}
             name="desc"
+            placeholder="Enter your description"
           />
         </div>
         <div className="form-group text-center">
           <button type="submit" className="btn btn-primary">
-            Submit
+            Sign Up
           </button>
         </div>
       </form>

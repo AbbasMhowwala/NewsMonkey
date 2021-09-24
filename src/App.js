@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, {useState } from "react";
+//import { useHistory } from 'react-router';
 import { useEffect } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
@@ -6,20 +7,26 @@ import News from "./components/News";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import LoadingBar from "react-top-loading-bar";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Alert from "./components/Alert";
-import { useHistory } from 'react-router';
-
+import Shop from "./components/Shop";
+import GemShop from "./components/GemShop";
+//import newsContext from '../src/context/newsContext';
+//import NewsState from './context/NewsState';
 
 const App = () => {
-  let history = useHistory();
+  // const context = useContext(newsContext);
+  // const { getNews } = context;
+  // useEffect(() => {
+  //   getNews()
+  // }, [])
+  //let history = useHistory();
   useEffect(() => {
     if(localStorage.getItem('token')){
       console.log("Logged In");
     }
     else{
-      //window.location.href = "http://www.w3schools.com";
-
+      //history.push("/login")
     }
   }, []);
   const pageSize = 15;
@@ -36,7 +43,7 @@ const App = () => {
     }, 1500);
   };
   return (
-    <div>
+    <div>    
       <Router>
         <Navbar></Navbar>
         <Alert alert={alert}></Alert>
@@ -129,7 +136,21 @@ const App = () => {
           <Route exact path="/register">
             <Register showAlert={showAlert}></Register>
           </Route>
+          <Route exact path="/shop">
+            <Shop setProgress={setProgress} pageSize={pageSize}></Shop>
+          </Route>
+          <Route exact path="/gemshop">
+            <GemShop
+              setProgress={setProgress}
+              apiKey={apiKey}
+              key=""
+              pageSize={pageSize}
+              country="in"
+              category="technology"
+            ></GemShop>
+          </Route>  
         </Switch>
+
       </Router>
     </div>
   );

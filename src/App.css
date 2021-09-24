@@ -10,19 +10,19 @@ body{
 }
 .login
 {
-  margin-top: 100px;
+    padding: 40px 40px 40px;
     box-shadow: rgb(25 25 25 / 4%) 0 0 1px 0, rgb(0 0 0 / 10%) 0 3px 4px 0;
-    background: #f5f5f5;
-    padding: 100px 60px 60px;
-    border: 1px solid #000;
+    background: #fff;
     border-radius: 3px;
     max-width: 500px;
+    margin-top: 150px;
 }
 .login h1 {
-  font-size: 35px;
-  font-weight: 600;
-  margin-bottom: 40px;
-  text-transform: uppercase;
+  text-align: center;
+    padding: 0 0 50px 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.5rem;
 }
 .login  label {
   font-size: 16px;
@@ -30,18 +30,23 @@ body{
   margin-bottom: 11px;
 }
 .login input {
-  border-radius: 4px;
-  border: 1px solid #a7a7a7;
+  border: 1px solid #cdcdcd;
   margin-bottom: 30px;
+  border-radius: 0;
 }
 .login button {
-  background: #000;
-  border: 1px solid #000;
-  padding: 10px 50px;
-  border-radius: 3px;
-  text-align: center;
-  margin: 0 auto;
-  margin-top: 40px;
+  
+    margin-top: 20px; 
+    width: 100%;
+    box-shadow: 0 5px 19px rgb(34 58 115 / 50%) !important;
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 0 !important;
+    background-color: #223a73 !important;
+    border-color: #223a73 !important;
+    outline: none !important;
 }
 .login button:hover
 {
@@ -63,6 +68,17 @@ body{
 span.position-absolute.top-0.start-100.translate-middle.badge.rounded-pill.bg-success
 {
   right: 0;
+}
+.card-shop
+{
+  min-height: 550px;
+  max-height: 550px;
+  border-radius: 0;
+  box-shadow: rgb(25 25 25 / 4%) 0 0 1px 0, rgb(0 0 0 / 10%) 0 3px 4px 0;
+}
+.card-shop img.card-img-top {
+  max-height: 330px;
+  min-height: 330px;
 }
 .card-news
 {
