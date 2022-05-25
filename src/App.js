@@ -29,8 +29,9 @@ const App = () => {
       //history.push("/login")
     }
   }, []);
+  const apiKey = "9ca7575508184b5587ed6a1ef6d252e0  ";
+
   const pageSize = 15;
-  const apiKey = process.env.REACT_APP_NEWS_API;
   const [progress, setProgress] = useState(0);
   const [alert, setAlert] = useState(null);
   const showAlert = (message, type) => {

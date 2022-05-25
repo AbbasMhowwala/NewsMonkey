@@ -45,14 +45,14 @@ const News = (props)=> {
             <h1 className="newshead">News Monkey - Top {capitalizeFirstletter(props.category)} Headlines</h1>
             {loading && <Spinner />}
             <InfiniteScroll
-            dataLength={articles.length}
+            dataLength={articles?.length}
             next={fetchMoreData}
-            hasMore={articles.length !== totalResults}
+            hasMore={articles?.length !== totalResults}
             loader={<Spinner />}
             >
             <div className="container">
                 <div className="row">
-                {articles.map((element)=>
+                {articles?.map((element)=>
                     <div className="col-md-4" key={element.url}>
                         <NewsItems title={element.title?element.title.slice(0, 45): ""} description={element.description?element.description.slice(0, 88): ""} imageUrl={element.urlToImage?element.urlToImage: ""} 
                         url={element.url?element.url: ""} author={element.author?element.author: ""} date={element.publishedAt?element.publishedAt: ""} source={element.source.name} />   
